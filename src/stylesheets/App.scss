@@ -9,12 +9,12 @@
 
   // border: 2px yellow solid;
 }
-.listContainer {
+.cardList {
   display: flex;
 
   flex-wrap: wrap;
 }
-.list {
+.card {
   width: 200px;
   display: flex;
   flex-direction: column;

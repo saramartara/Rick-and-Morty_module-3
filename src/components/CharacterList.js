@@ -1,15 +1,21 @@
-import '../stylesheets/App.scss';
+import React from 'react';
 import CharacterCard from './CharacterCard';
 
-function CharacterList(props) {
-  console.log(props);
+const CharacterList = (props) => {
+  const charElements = props.characters.map((character) => {
+    console.log('personaje mapeado en lista:', character);
+    return (
+      <li className="card" key={character.id}>
+      <CharacterCard character={character} />
+    </li>
+    )
+    
+  });
   return (
     <section>
-      <ul className="listContainer">
-        <CharacterCard />
-      </ul>
+      <ul className="cardList">{charElements}</ul>
     </section>
   );
-}
+};
 
 export default CharacterList;

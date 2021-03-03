@@ -4,14 +4,18 @@ import '../stylesheets/App.scss';
 // import { Link, Route, Switch } from 'react-router-dom';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
+import dataJs from '../data/data.json';
 
-function App(props) {
+const App = (props) => {
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
     GetDataFromApi().then((data) => setCharacters(data));
   }, []);
   console.log(characters);
+
+  // const characters = [dataJs.results];
+  // console.log(characters);
 
   return (
     <>
@@ -23,9 +27,9 @@ function App(props) {
         />
       </h1>
       <Filters />
-      <CharacterList />
+      <CharacterList characters={characters} />
     </>
   );
-}
+};
 
 export default App;
