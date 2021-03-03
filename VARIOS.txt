@@ -1,0 +1,9 @@
+
+https://rickandmortyapi.com/documentation/#get-all-characters
+
+https://rickandmortyapi.com/api/character
+
+si hay problema, poner en fetch:
+https://raw.githubusercontent.com/Adalab/ricky-
+morty/master/data/rick-y-morty.json
+
