@@ -4,16 +4,27 @@ import '../stylesheets/App.scss';
 // import { Link, Route, Switch } from 'react-router-dom';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
-import dataJs from '../data/data.json';
+// import dataJs from '../data/data.json';
 
 const App = (props) => {
   const [characters, setCharacters] = useState([]);
+  const [name, setName] = useState('');
 
   useEffect(() => {
     GetDataFromApi().then((data) => setCharacters(data));
   }, []);
-  console.log(characters);
 
+
+const handleFilter = (inputValue) => {
+  setName(inputValue);
+}
+
+
+const filterCharacters = characters.filter(character => {return character.name.toLowerCase().includes(name.toLowerCase())})
+
+
+
+  //BORRAR! datos en data/data.json
   // const characters = [dataJs.results];
   // console.log(characters);
 
@@ -26,8 +37,8 @@ const App = (props) => {
           border="0"
         />
       </h1>
-      <Filters />
-      <CharacterList characters={characters} />
+      <Filters handleFilter={handleFilter}/>
+      <CharacterList characters={filterCharacters} />
     </>
   );
 };
