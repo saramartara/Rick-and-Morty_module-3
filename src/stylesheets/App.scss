@@ -1,27 +1,54 @@
 * {
-  background-color: beige;
+  background-color: darkviolet;
   box-sizing: border-box;
   margin: none;
   padding: none;
   list-style: none;
-}
-
-.btn {
-  border-radius: 12px;
-  font-size: 20px;
-  border: none;
-  background-color: indianred;
-  text-align: center;
   text-decoration: none;
-  // display: inline-block;
-  cursor: pointer;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  // border: 2px yellow solid;
+}
+.listContainer {
+  display: flex;
+
+  flex-wrap: wrap;
+}
+.list {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
 }
 
-.title {
-  color: darkslategrey;
+.bk {
+  background-color: darkturquoise;
+}
+.name {
+  color: white;
+}
+.species {
+  color: white;
 }
 
-.btn:hover {
-  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-    0 17px 50px 0 rgba(0, 0, 0, 0.19);
-}
+// .list {
+//   text-decoration: none;
+//   list-style: none;
+//   margin: 0;
+// }
+
+// .btn {
+//   border-radius: 12px;
+//   font-size: 20px;
+//   border: none;
+//   background-color: indianred;
+//   text-align: center;
+
+//   // display: inline-block;
+//   cursor: pointer;
+// }
+
+// .btn:hover {
+//   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+//     0 17px 50px 0 rgba(0, 0, 0, 0.19);
+// }
