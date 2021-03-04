@@ -6,7 +6,7 @@ const CharacterDetail = (props) => {
   const { name, status, species, origin, image, episode } = props.character;
   return (
     <div className="detailWrapper">
-      <Link to="/">Volver</Link>
+      <Link className="detailLink" to="/">Volver</Link>
       <article className="detailCard">
         <img
           className="detailCard__img"

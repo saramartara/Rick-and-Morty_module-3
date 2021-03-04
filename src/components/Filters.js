@@ -11,11 +11,13 @@ const Filters = (props) => {
   return (
     <form onSubmit={handleSubmit}>
       <input
+        className="input"
         type="text"
         value={props.userSearch}
         name="name"
         id="name"
         onChange={handleChange}
+        placeholder="...busca un personaje"
       />
     </form>
   );

@@ -5,10 +5,8 @@
   padding: 0;
   list-style: none;
   text-decoration: none;
-  color: white;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-
-  // border: 2px yellow solid;
+  color: whitesmoke;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 .App {
   background-color: black;
@@ -18,6 +16,23 @@
   flex-direction: row;
   justify-content: center;
 }
+.logo {
+  width: 40%;
+}
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.input {
+  border: darkturquoise 2px solid;
+  background-color: black;
+  width: 30%;
+  height: 40px;
+  font-size: large;
+  color: greenyellow;
+  margin: 20px;
+}
 
 .cardList {
   display: flex;
@@ -26,43 +41,48 @@
 .card {
   display: flex;
   flex-direction: column;
-  margin: 5px;
-}
-
-.bk {
-  background-color: darkturquoise;
-}
-.name {
-  color: white;
-}
-.species {
-  color: white;
+  margin: 8px;
+  &__container {
+    background-color: darkturquoise;
+    padding: 30px;
+  }
 }
 
 .detailWrapper {
+  margin-top: 50px;
+  margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: max-content;
+}
+.detailLink {
+  font-size: 25px;
+  color: darkturquoise;
+  text-decoration: underline;
+  margin-bottom: 8px;
+  align-self: flex-end;
 }
 
 .detailCard {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  max-width: 50%;
-  border: solid 2px red;
+  border-style: outset;
+  border: 10px greenyellow dashed;
   border-radius: 8px;
   background-color: darkturquoise;
   &__sec {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-right: 50px;
   }
 
   &__img {
-    padding: 20px;
-    border-radius: 8px;
+    padding: 40px;
+    border-radius: 12px;
   }
 
   &__name {
@@ -70,6 +90,7 @@
   }
 
   &__list {
+    padding-right: 30px;
     text-decoration: none;
     list-style: none;
   }
