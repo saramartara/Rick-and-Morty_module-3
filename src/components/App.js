@@ -25,14 +25,14 @@ const App = (props) => {
   });
 
   const renderDetail = (props) => {
-    console.log('App:', props);
     const id = parseInt(props.match.params.id);
 
     const selectChar = characters.find((character) => {
       return character.id === id;
     });
 
-    return <CharacterDetail character={selectChar} />;
+      return <CharacterDetail character={selectChar} />;
+
   };
 
   //BORRAR! datos en data/data.json
@@ -48,12 +48,12 @@ const App = (props) => {
           border="0"
         />
       </h1>
-      
+
       <Switch>
-          <Route path="/" exact >
-            <Filters handleFilter={handleFilter} />
-            <CharacterList characters={filterCharacters} />
-          </Route >
+        <Route path="/" exact>
+          <Filters handleFilter={handleFilter} />
+          <CharacterList characters={filterCharacters} />
+        </Route>
         <Route path="/character/:id" render={renderDetail} />
       </Switch>
     </>

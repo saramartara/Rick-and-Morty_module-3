@@ -2,12 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CharacterDetail = (props) => {
-  console.log('estoy en detail:', props);
+  console.log('estoy en detail', props);
   return (
     <>
-        <Link to="/">Volver</Link>
+      <Link to="/">Volver</Link>
       <article>
-
         <img
           title={props.character.name}
           alt={props.character.name}
