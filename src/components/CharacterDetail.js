@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const CharacterDetail = (props) => {
-  console.log('estoy en detail', props);
+
   return (
     <>
       <Link to="/">Volver</Link>

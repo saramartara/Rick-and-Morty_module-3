@@ -35,15 +35,11 @@ const App = (props) => {
     return selectChar ? (
       <CharacterDetail character={selectChar} />
     ) : (
-      <p>no existe</p>
+      <p>{`El id ${props.match.params.id} no existe`}</p>
     );
   };
 
-  // isLoading ? <p>loading...</p> :
 
-  //BORRAR! datos en data/data.json
-  // const characters = [dataJs.results];
-  // console.log(characters);
 
   return (
     <>
