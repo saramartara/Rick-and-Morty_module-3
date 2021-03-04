@@ -15,6 +15,9 @@ const GetDataFromApi = () => {
           name: character.name,
           species: character.species,
           image: character.image,
+          status: character.status,
+          episode: character.episode,
+          origin: character.origin.name,
         };
       });
     });

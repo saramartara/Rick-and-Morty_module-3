@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
+import { Route, Switch } from 'react-router-dom';
 import GetDataFromApi from '../services/GetDataFromApi';
 import '../stylesheets/App.scss';
-// import { Link, Route, Switch } from 'react-router-dom';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
+import CharacterDetail from './CharacterDetail';
+
 // import dataJs from '../data/data.json';
 
 const App = (props) => {
@@ -14,15 +16,24 @@ const App = (props) => {
     GetDataFromApi().then((data) => setCharacters(data));
   }, []);
 
+  const handleFilter = (inputValue) => {
+    setName(inputValue);
+  };
 
-const handleFilter = (inputValue) => {
-  setName(inputValue);
-}
+  const filterCharacters = characters.filter((character) => {
+    return character.name.toLowerCase().includes(name.toLowerCase());
+  });
 
+  const renderDetail = (props) => {
+    console.log('App:', props);
+    const id = parseInt(props.match.params.id);
 
-const filterCharacters = characters.filter(character => {return character.name.toLowerCase().includes(name.toLowerCase())})
+    const selectChar = characters.find((character) => {
+      return character.id === id;
+    });
 
-
+    return <CharacterDetail character={selectChar} />;
+  };
 
   //BORRAR! datos en data/data.json
   // const characters = [dataJs.results];
@@ -37,8 +48,14 @@ const filterCharacters = characters.filter(character => {return character.name.t
           border="0"
         />
       </h1>
-      <Filters handleFilter={handleFilter}/>
-      <CharacterList characters={filterCharacters} />
+      
+      <Switch>
+          <Route path="/" exact >
+            <Filters handleFilter={handleFilter} />
+            <CharacterList characters={filterCharacters} />
+          </Route >
+        <Route path="/character/:id" render={renderDetail} />
+      </Switch>
     </>
   );
 };
