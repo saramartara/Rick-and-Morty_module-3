@@ -11,11 +11,14 @@ import CharacterDetail from './CharacterDetail';
 const App = (props) => {
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    GetDataFromApi().then((data) => setCharacters(data));
+    GetDataFromApi().then((data) => {setCharacters(data); setLoading(false)
+    });
   }, []);
 
+  
   const handleFilter = (inputValue) => {
     setName(inputValue);
   };
@@ -31,7 +34,7 @@ const App = (props) => {
       return character.id === id;
     });
 
-      return <CharacterDetail character={selectChar} />;
+      return loading ? <p>loading... </p> : <CharacterDetail character={selectChar} /> 
 
   };
 

@@ -17,7 +17,7 @@ const CharacterDetail = (props) => {
           <ul>
             <li>Status: {props.character.status}</li>
             <li>Species: {props.character.species}</li>
-            <li>Origin: {props.character.origin.name} Earth (c-137)</li>
+            <li>Origin: {props.character.origin.name}</li>
             <li>Episodes: {props.character.episode.length}</li>
           </ul>
         </section>
