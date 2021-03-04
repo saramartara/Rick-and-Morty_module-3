@@ -40,9 +40,9 @@ const App = (props) => {
   };
 
   return (
-    <>
-      <h1>
-        <img src={logo} alt={alt} title={alt} />
+    <div className="App">
+      <h1 className="title">
+        <img className="logo" src={logo} alt={alt} title={alt} />
       </h1>
 
       <Switch>
@@ -52,7 +52,7 @@ const App = (props) => {
         </Route>
         <Route path="/character/:id" render={renderDetail} />
       </Switch>
-    </>
+      </div>
   );
 };
 

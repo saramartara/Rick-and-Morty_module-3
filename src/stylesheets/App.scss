@@ -1,21 +1,29 @@
 * {
-  background-color: darkviolet;
+  // background-color: black;
   box-sizing: border-box;
-  margin: none;
-  padding: none;
+  margin: 0;
+  padding: 0;
   list-style: none;
   text-decoration: none;
+  color: white;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
   // border: 2px yellow solid;
 }
+.App {
+  background-color: black;
+}
+.title {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .cardList {
   display: flex;
-
   flex-wrap: wrap;
 }
 .card {
-  // width: 200px;
   display: flex;
   flex-direction: column;
   margin: 5px;
@@ -29,6 +37,46 @@
 }
 .species {
   color: white;
+}
+
+.detailWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.detailCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 50%;
+  border: solid 2px red;
+  border-radius: 8px;
+  background-color: darkturquoise;
+  &__sec {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__img {
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  &__name {
+    font-size: 35px;
+  }
+
+  &__list {
+    text-decoration: none;
+    list-style: none;
+  }
+  &__item {
+    font-size: 20px;
+    font-weight: 100;
+  }
 }
 
 // .list {
