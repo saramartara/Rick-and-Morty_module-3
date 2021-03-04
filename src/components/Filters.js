@@ -1,4 +1,4 @@
-import { checkPropTypes } from 'prop-types';
+// import { checkPropTypes } from 'prop-types';
 import React from 'react';
 
 const Filters = (props) => {
@@ -6,8 +6,11 @@ const Filters = (props) => {
   const handleChange = (ev) => {
     props.handleFilter(ev.target.value)
   };
+  const handleSubmit = (ev) => {
+    ev.preventDefault();
+  } 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input type="text" name="name" id="name" onChange={handleChange}/>
     </form>
   );
