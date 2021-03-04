@@ -1,4 +1,4 @@
-// import { checkPropTypes } from 'prop-types';
+
 import React from 'react';
 
 const Filters = (props) => {

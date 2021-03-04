@@ -1,32 +1,44 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const CharacterDetail = (props) => {
+  const { name, status, species, origin, image, episode } = props.character;
   return (
     <div className="detailWrapper">
       <Link to="/">Volver</Link>
       <article className="detailCard">
         <img
           className="detailCard__img"
-          title={props.character.name}
-          alt={props.character.name}
-          src={props.character.image}
+          title={name}
+          alt={name}
+          src={image}
         />
         <section className="detailCard__sec">
-          <h4 className="detail__name">{props.character.name}</h4>
+          <h4 className="detail__name">{name}</h4>
           <ul className="detail__list">
-            <li className="detail__item">Status: <span>{props.character.status}</span></li>
-            <li className="detail__item">Species: <span>{props.character.species}</span></li>
+            <li className="detail__item">Status: <span>{status}</span></li>
+            <li className="detail__item">Species: <span>{species}</span></li>
             <li className="detail__item">
-              Origin: <span>{props.character.origin.name}</span>
+              Origin: <span>{origin.name}</span>
             </li>
             <li className="detail__item">
-              Episodes: <span>{props.character.episode.length}</span>
+              Episodes: <span>{episode.length}</span>
             </li>
           </ul>
         </section>
       </article>
     </div>
   );
+
 };
+
+
+
+CharacterDetail.propTypes ={
+  name: PropTypes.string,
+  id: PropTypes.number,
+  character: PropTypes.object,
+};
+
 export default CharacterDetail;
