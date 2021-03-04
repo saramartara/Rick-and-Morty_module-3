@@ -12,16 +12,16 @@ const App = (props) => {
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
   // const [isLoading, setIsLoading] = useState(true);
-
+  console.log(name);
 
   useEffect(() => {
     GetDataFromApi().then((data) => setCharacters(data));
   }, []);
-  
+
   const handleFilter = (inputValue) => {
     setName(inputValue);
   };
-   const filterCharacters = characters.filter((character) => {
+  const filterCharacters = characters.filter((character) => {
     return character.name.toLowerCase().includes(name.toLowerCase());
   });
 
@@ -31,11 +31,15 @@ const App = (props) => {
     const selectChar = characters.find((character) => {
       return character.id === id;
     });
-    
-    return selectChar ? <CharacterDetail character = {selectChar} /> : <p>no existe</p>
+
+    return selectChar ? (
+      <CharacterDetail character={selectChar} />
+    ) : (
+      <p>no existe</p>
+    );
   };
 
-// isLoading ? <p>loading...</p> :
+  // isLoading ? <p>loading...</p> :
 
   //BORRAR! datos en data/data.json
   // const characters = [dataJs.results];
@@ -53,8 +57,8 @@ const App = (props) => {
 
       <Switch>
         <Route path="/" exact>
-          <Filters handleFilter={handleFilter} />
-          <CharacterList characters={filterCharacters}  />
+          <Filters handleFilter={handleFilter} userSearch={name} />
+          <CharacterList characters={filterCharacters} userSearch={name} />
         </Route>
         <Route path="/character/:id" render={renderDetail} />
       </Switch>

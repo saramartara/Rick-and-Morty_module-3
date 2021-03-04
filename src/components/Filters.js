@@ -2,16 +2,21 @@
 import React from 'react';
 
 const Filters = (props) => {
-
   const handleChange = (ev) => {
-    props.handleFilter(ev.target.value)
+    props.handleFilter(ev.target.value);
   };
   const handleSubmit = (ev) => {
     ev.preventDefault();
-  } 
+  };
   return (
     <form onSubmit={handleSubmit}>
-      <input type="text" name="name" id="name" onChange={handleChange}/>
+      <input
+        type="text"
+        value={props.userSearch}
+        name="name"
+        id="name"
+        onChange={handleChange}
+      />
     </form>
   );
 };
