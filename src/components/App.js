@@ -6,13 +6,12 @@ import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
 
-// import dataJs from '../data/data.json';
-
 const App = (props) => {
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
-  // const [isLoading, setIsLoading] = useState(true);
-  console.log(name);
+
+  const logo = './Rick_and_Morty.png';
+  const alt = 'logo';
 
   useEffect(() => {
     GetDataFromApi().then((data) => setCharacters(data));
@@ -21,6 +20,7 @@ const App = (props) => {
   const handleFilter = (inputValue) => {
     setName(inputValue);
   };
+
   const filterCharacters = characters.filter((character) => {
     return character.name.toLowerCase().includes(name.toLowerCase());
   });
@@ -39,16 +39,10 @@ const App = (props) => {
     );
   };
 
-
-
   return (
     <>
       <h1>
-        <img
-          src="https://fontmeme.com/permalink/210303/18269efaf0589bdc79aaf3cea37ab67b.png"
-          alt="fuente-get-schwifty"
-          border="0"
-        />
+        <img src={logo} alt={alt} title={alt} />
       </h1>
 
       <Switch>
