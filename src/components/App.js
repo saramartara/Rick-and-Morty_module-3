@@ -17,31 +17,6 @@ const App = (props) => {
     setCharacters(data));
   }, []);
 
-
-
-
-//sort
-
-// console.table(characters);
-// console.table(characters.sort(((a,b)=> b.id - a.id )));
-// console.table(characters.sort(function(a, b) {
-//   if (a.name > b.name) {
-//   return 1;
-// } 
-// if (a.name < b.name) {
-//   return -1;
-// }
-// return 0;}))
-//
-//igual en ternario
-//
-// console.table(characters.sort( (a, b) => a.name > b.name ? 1 : - 1))
-// ;
-
-
-
-
-
   const handleFilter = (inputValue) => {
     setName(inputValue);
   };
