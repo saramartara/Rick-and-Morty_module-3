@@ -4,8 +4,8 @@ https://rickandmortyapi.com/documentation/#get-all-characters
 https://rickandmortyapi.com/api/character
 
 si hay problema, poner en fetch:
-https://raw.githubusercontent.com/Adalab/ricky-
-morty/master/data/rick-y-morty.json
+https://raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.json
+
 
 
 <a href="https://fontmeme.com/fuentes/fuente-get-schwifty/"><img src="https://fontmeme.com/permalink/210303/89204f57cba876638717858b006d3c8f.png" alt="fuente-get-schwifty" border="0"></a>
