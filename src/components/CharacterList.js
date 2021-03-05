@@ -2,7 +2,7 @@ import React from 'react';
 import CharacterCard from './CharacterCard';
 
 const CharacterList = (props) => {
-  console.log(props.userSearch);
+
   if (props.characters.length === 0) {
     return (
       <p>{`No hay ningún personaje que coincida con la palabra:  ${props.userSearch}`}</p>

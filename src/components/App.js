@@ -10,18 +10,44 @@ const App = (props) => {
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
 
-  const logo = './Rick_and_Morty.png';
-  const alt = 'logo';
+  
 
   useEffect(() => {
-    GetDataFromApi().then((data) => setCharacters(data));
+    GetDataFromApi().then((data) => 
+    setCharacters(data));
   }, []);
+
+
+
+
+//sort
+
+// console.table(characters);
+// console.table(characters.sort(((a,b)=> b.id - a.id )));
+// console.table(characters.sort(function(a, b) {
+//   if (a.name > b.name) {
+//   return 1;
+// } 
+// if (a.name < b.name) {
+//   return -1;
+// }
+// return 0;}))
+//
+//igual en ternario
+//
+// console.table(characters.sort( (a, b) => a.name > b.name ? 1 : - 1))
+// ;
+
+
+
+
 
   const handleFilter = (inputValue) => {
     setName(inputValue);
   };
 
-  const filterCharacters = characters.filter((character) => {
+  const sortAndFilterCharacters = characters.sort( (a, b) => a.name > b.name ? 1 : - 1)
+  .filter((character) => {
     return character.name.toLowerCase().includes(name.toLowerCase());
   });
 
@@ -39,6 +65,9 @@ const App = (props) => {
     );
   };
 
+  const logo = './Rick_and_Morty.png';
+  const alt = 'logo';
+
   return (
     <div className="App">
       <h1 className="title">
@@ -48,7 +77,7 @@ const App = (props) => {
       <Switch>
         <Route path="/" exact>
           <Filters handleFilter={handleFilter} userSearch={name} />
-          <CharacterList characters={filterCharacters} userSearch={name} />
+          <CharacterList characters={sortAndFilterCharacters} userSearch={name} />
         </Route>
         <Route path="/character/:id" render={renderDetail} />
       </Switch>
