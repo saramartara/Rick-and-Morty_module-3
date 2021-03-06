@@ -9,16 +9,16 @@ const CharacterCard = (props) => {
 
   const deadStatus = () =>
     status === 'Dead' ? (
-      <i title={status} className="fa fa-hackaday" aria-hidden="true"></i>
+      <i title={`Status: ${status}`} className="fa fa-hackaday" aria-hidden="true"></i>
     ) : (
       ''
     );
 
   const speciesIcon = () =>
     species === 'Alien' ? (
-      <i title={species} className="fa fa-reddit-alien"></i>
+      <i title={`Specie: ${species}`} className="fa fa-reddit-alien"></i>
     ) : (
-      <i title={species} className="fa fa-universal-access"></i>
+      <i title={`Specie: ${species}`} className="fa fa-universal-access"></i>
     );
 
   return (
