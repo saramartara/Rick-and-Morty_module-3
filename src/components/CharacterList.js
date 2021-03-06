@@ -10,7 +10,7 @@ const CharacterList = (props) => {
   } else {
     const charElements = props.characters.map((character) => {
       return (
-        <li key={character.id}>
+        <li className="card" key={character.id}>
           <CharacterCard character={character} />
         </li>
       );

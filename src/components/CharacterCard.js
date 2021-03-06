@@ -22,7 +22,7 @@ const CharacterCard = (props) => {
     );
 
   return (
-    <Link className="card" to={`/character/${props.character.id}`}>
+    <Link to={`/character/${props.character.id}`}>
       <img
         className="card__img"
         title={`click to see ${name} details`}
