@@ -36,14 +36,23 @@ form {
 }
 
 .cardList {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-gap: 10px;
+  // display: flex;
+  // flex-wrap: wrap;
 }
 .card {
+  // display: grid;
+  // grid-template-columns: 1fr;
+  // grid-template-rows: 1fr, 1fr;
   display: flex;
   flex-direction: column;
   margin: 8px;
+ 
   &__container {
+    // grid-column: 1;
     background-color: darkturquoise;
     padding: 30px;
   }
