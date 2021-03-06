@@ -1,0 +1,20 @@
+@mixin icon {
+  margin-top: rem(8);
+  background-color: $mainBg;
+  border-radius: 50%;
+  font-size: rem(30);
+  color: $caca;
+  @content;
+}
+
+@mixin tablet {
+  @media all and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media all and (min-width: 1024px) {
+    @content;
+  }
+}

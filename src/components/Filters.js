@@ -9,7 +9,7 @@ const Filters = (props) => {
     ev.preventDefault();
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <input
         className="input"
         type="text"

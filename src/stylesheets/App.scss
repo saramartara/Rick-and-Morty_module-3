@@ -1,38 +1,44 @@
+@import 'core/variables';
+@import 'core/functions';
+@import 'core/reset';
+@import 'core/mixins';
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-decoration: none;
-  color: whitesmoke;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
 .App {
-  background-color: black;
-  
+  background-color: $mainBg;
 }
-.title {
+.logoContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
 .logo {
-  width: 40%;
+  margin: auto;
+  width: 60vw;
+  @include tablet {
+    width: 40vw;
+  }
 }
-form {
+.form {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
+.msg {
+  color: $amarillo;
+  font-family: $secondaryText;
+}
 .input {
-  border: darkturquoise 2px solid;
-  background-color: black;
-  width: 30%;
-  height: 40px;
-  font-size: large;
-  color: greenyellow;
-  margin: 20px;
+  border: $caca 2px solid;
+  border-radius: 8px;
+  background-color: $mainBg;
+  width: 60vw;
+  height: 25px;
+  font-size: 12px;
+  color: $verde;
+  margin: 40px;
+  @include tablet {
+    width: 40vw;
+  }
 }
 
 .cardList {
@@ -40,109 +46,121 @@ form {
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(10, 1fr);
   grid-auto-rows: auto;
-  grid-gap: 8px;
-  
+  grid-gap: 10px;
+  @include tablet {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+  }
+  @include desktop {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+  }
 }
 
 .card {
   display: flex;
   flex-direction: column;
-  // border-radius: 8px;
- 
+
   &__img {
-    width: 50vw;
-    // border-radius: 2px;
+    width: 48vw;
+    @include tablet {
+      width: auto;
+    }
   }
   &__container {
-    width: 50vw;
-    border-radius: 2px;
-    background-color: darkturquoise;
-    padding: 16px;
+    font-family: $fontText;
+    width: 48vw;
+    @include tablet {
+      width: auto;
+    }
+    background-color: $verde;
+    padding: 8px;
   }
   &__name {
-    font-size: 12px;
+    font-size: 16px;
+    color: $dark;
   }
 }
-.fa {
-  margin-top: 8px;
-  background-color: black;
-  border-radius: 50%;
-  font-size: 35px;
-  color: yellowgreen;
+.icon {
+  @include icon;
+  &--status {
+    @include icon {
+      background-color: $verde;
+      color: black;
+    }
+  }
 }
 
 
-//------------------ DETAIL
 .detailWrapper {
-  margin-top: 50px;
   margin: auto;
+  width: fit-content;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: max-content;
+  align-items: flex-end;
 }
 .detailLink {
-  font-size: 25px;
-  color: darkturquoise;
+  width: auto;
+  font-size: 20px;
+  font-family: $secondaryText;
+  color: $azul;
   text-decoration: underline;
-  margin-bottom: 8px;
-  align-self: flex-end;
+  margin-bottom: 12px;
 }
 
 .detailCard {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border-style: outset;
-  border: 10px greenyellow dashed;
-  border-radius: 8px;
-  background-color: darkturquoise;
+  width: auto;
+  border: 10px $rosa outset;
+  border-radius: 20px;
+  background-color: $rosa;
   &__sec {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-right: 50px;
+   
   }
 
   &__img {
-    padding: 40px;
-    border-radius: 12px;
+    width: 40vw;
+    padding: 10px;
+    border-radius: 50%;
+    @include tablet {
+      width: auto;
+      padding: 30px;
+    }
+    @include desktop {
+      width: auto;
+      padding: 60px;
+    }
   }
 
   &__name {
-    font-size: 35px;
+    font-family: $fontText;
+    font-size: 16px;
+    @include tablet {
+      font-size: 18px;
+    }
+    @include tablet {
+      font-size: 20px;
+    }
   }
 
   &__list {
-    padding-right: 30px;
+    font-family: $fontText;
+    padding-right: 10px;
+    font-size: 12px;
     text-decoration: none;
     list-style: none;
+    @include tablet {
+      font-size: 14px;
+    }
+    @include tablet {
+      font-size: 16px;
+    }
   }
-  &__item {
-    font-size: 20px;
-    font-weight: 100;
-  }
+
 }
 
-// .list {
-//   text-decoration: none;
-//   list-style: none;
-//   margin: 0;
-// }
-
-// .btn {
-//   border-radius: 12px;
-//   font-size: 20px;
-//   border: none;
-//   background-color: indianred;
-//   text-align: center;
-
-//   // display: inline-block;
-//   cursor: pointer;
-// }
-
-// .btn:hover {
-//   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
-//     0 17px 50px 0 rgba(0, 0, 0, 0.19);
-// }

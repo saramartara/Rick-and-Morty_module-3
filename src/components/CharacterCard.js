@@ -9,20 +9,20 @@ const CharacterCard = (props) => {
 
   const deadStatus = () =>
     status === 'Dead' ? (
-      <i title={`Status: ${status}`} className="fa fa-hackaday" aria-hidden="true"></i>
+      <i title={`Status: ${status}`} className="icon--status fa fa-hackaday" aria-hidden="true"></i>
     ) : (
       ''
     );
 
   const speciesIcon = () =>
     species === 'Alien' ? (
-      <i title={`Specie: ${species}`} className="fa fa-reddit-alien"></i>
+      <i title={`Specie: ${species}`} className="icon fa fa-reddit-alien"></i>
     ) : (
-      <i title={`Specie: ${species}`} className="fa fa-universal-access"></i>
+      <i title={`Specie: ${species}`} className="icon fa fa-universal-access"></i>
     );
 
   return (
-    <Link to={`/character/${props.character.id}`}>
+    <Link className="cardLink" to={`/character/${props.character.id}`}>
       <img
         className="card__img"
         title={`click to see ${name} details`}

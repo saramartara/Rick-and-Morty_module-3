@@ -10,21 +10,19 @@ const App = (props) => {
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
 
-  
-
   useEffect(() => {
-    GetDataFromApi().then((data) => 
-    setCharacters(data));
+    GetDataFromApi().then((data) => setCharacters(data));
   }, []);
 
   const handleFilter = (inputValue) => {
     setName(inputValue);
   };
 
-  const sortAndFilterCharacters = characters.sort( (a, b) => a.name > b.name ? 1 : - 1)
-  .filter((character) => {
-    return character.name.toLowerCase().includes(name.toLowerCase());
-  });
+  const sortAndFilterCharacters = characters
+    .sort((a, b) => (a.name > b.name ? 1 : -1))
+    .filter((character) => {
+      return character.name.toLowerCase().includes(name.toLowerCase());
+    });
 
   const renderDetail = (props) => {
     const id = parseInt(props.match.params.id);
@@ -36,7 +34,7 @@ const App = (props) => {
     return selectChar ? (
       <CharacterDetail character={selectChar} />
     ) : (
-      <p>{`El id ${props.match.params.id} no existe`}</p>
+      <p className="msg">{`El id ${props.match.params.id} no existe`}</p>
     );
   };
 
@@ -45,18 +43,21 @@ const App = (props) => {
 
   return (
     <div className="App">
-      <h1 className="title">
+      <h1 className="logoContainer">
         <img className="logo" src={logo} alt={alt} title={alt} />
       </h1>
 
       <Switch>
         <Route path="/" exact>
           <Filters handleFilter={handleFilter} userSearch={name} />
-          <CharacterList characters={sortAndFilterCharacters} userSearch={name} />
+          <CharacterList
+            characters={sortAndFilterCharacters}
+            userSearch={name}
+          />
         </Route>
         <Route path="/character/:id" render={renderDetail} />
       </Switch>
-      </div>
+    </div>
   );
 };
 

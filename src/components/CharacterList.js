@@ -5,7 +5,7 @@ const CharacterList = (props) => {
 
   if (props.characters.length === 0) {
     return (
-      <p>{`No hay ningún personaje que coincida con la palabra:  ${props.userSearch}`}</p>
+      <p className="msg">{`No hay ningún personaje que coincida con la palabra:  ${props.userSearch}`}</p>
     );
   } else {
     const charElements = props.characters.map((character) => {
