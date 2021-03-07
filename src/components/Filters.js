@@ -1,24 +1,17 @@
 import React from 'react';
 import '../stylesheets/layout/_filter.scss';
+import FilterBySpecies from './FilterBySpecies';
+import FilterByName from './FilterByName';
 
 const Filters = (props) => {
-  const handleChange = (ev) => {
-    props.handleFilter(ev.target.value);
-  };
+ 
   const handleSubmit = (ev) => {
     ev.preventDefault();
   };
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <input
-        className="input"
-        type="text"
-        value={props.userSearch}
-        name="name"
-        id="name"
-        onChange={handleChange}
-        placeholder="...busca un personaje"
-      />
+      <FilterByName handleFilter={props.handleFilter} />
+      <FilterBySpecies handleFilter={props.handleFilter} />
     </form>
   );
 };

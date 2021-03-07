@@ -10,20 +10,41 @@ import CharacterDetail from './CharacterDetail';
 const App = (props) => {
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
+  const [species, setSpecies] = useState('all')
 
   useEffect(() => {
     GetDataFromApi().then((data) => setCharacters(data));
   }, []);
 
   const handleFilter = (inputValue) => {
-    setName(inputValue);
+    if (inputValue.key === 'name') {
+      setName(inputValue)
+    }
+    // setName(inputValue);
+    else if (inputValue.key === 'species') {
+      setSpecies(inputValue);
+    }
   };
 
   const sortAndFilterCharacters = characters
     .sort((a, b) => (a.name > b.name ? 1 : -1))
     .filter((character) => {
-      return character.name.toLowerCase().includes(name.toLowerCase());
-    });
+      return character.name.toLowerCase().includes(name.toLowerCase())
+    }).filter((character) => {
+      console.log(character.species)
+      if (species === "all") {
+        return true;
+      } else if (species === "human") {
+        return character.species.human
+      } else {
+        return character.species.alien
+      }
+       
+    })
+
+    console.log(sortAndFilterCharacters)
+
+   
 
   const renderDetail = (props) => {
     const id = parseInt(props.match.params.id);
