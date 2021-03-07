@@ -23,17 +23,18 @@ const CharacterCard = (props) => {
 
   return (
     <Link className="cardLink" to={`/character/${props.character.id}`}>
-      <img
-        className="card__img"
-        title={`click to see ${name} details`}
-        alt={name}
-        src={image}
-      />
-      <div className="card__container">
-        <h4 className="card__name">{name}</h4>
-             
-        <span>{speciesIcon()}</span> <span>{deadStatus()}</span>
-      
+      <div className="card">
+        <img
+          className="card__img"
+          title={`click to see ${name} details`}
+          alt={name}
+          src={image}
+        />
+        <div className="card__container">
+          <h4 className="card__name">{name}</h4>
+              
+          <span>{speciesIcon()}</span> <span>{deadStatus()}</span>
+        </div>
       </div>
     </Link>
   );

@@ -13,9 +13,12 @@
 }
 .logo {
   margin: auto;
-  width: 60vw;
+  width: 50vw;
   @include tablet {
     width: 40vw;
+  }
+  @include desktop {
+    width: 30vw;
   }
 }
 .form {
@@ -24,73 +27,89 @@
   justify-content: center;
 }
 .msg {
-  color: $amarillo;
+  color: $iconColor;
   font-family: $secondaryText;
 }
 .input {
-  border: $caca 2px solid;
-  border-radius: 8px;
+  border: $secondaryColor rem(2) solid;
+  border-radius: rem(8);
   background-color: $mainBg;
-  width: 60vw;
-  height: 25px;
-  font-size: 12px;
-  color: $verde;
-  margin: 40px;
+  width: 50vw;
+  height: rem(25);
+  font-size: rem(12);
+  color: $secondBg;
+  margin: rem(40);
   @include tablet {
     width: 40vw;
+    height: rem(35);
+    font-size: rem(20);
+  }
+  @include desktop {
+    width: 30vw;
   }
 }
 
 .cardList {
+  background-color: $mainBg;
+  margin: auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(10, 1fr);
   grid-auto-rows: auto;
-  grid-gap: 10px;
+  grid-gap: rem(10);
   @include tablet {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-gap: auto;
   }
   @include desktop {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 }
 
 .card {
   display: flex;
   flex-direction: column;
-
-  &__img {
-    width: 48vw;
-    @include tablet {
-      width: auto;
-    }
+  width: 50vw;
+  height: auto;
+  @include tablet {
+    width: 30vw;
   }
+  @include desktop {
+    width: 25vw;
+  }
+
   &__container {
-    font-family: $fontText;
-    width: 48vw;
+    background-color: $secondBg;
+    padding: rem(8);
+    height: rem(200);
     @include tablet {
-      width: auto;
+      padding: 16px;
     }
-    background-color: $verde;
-    padding: 8px;
+    @include desktop {
+      padding: rem(20);
+    }
   }
   &__name {
-    font-size: 16px;
-    color: $dark;
+    font-family: $fontText;
+    font-size: rem(12);
+    color: $fontColor;
+    @include tablet {
+      font-size: rem(16);
+    }
+    @include desktop {
+      font-size: rem(24);
+    }
   }
 }
 .icon {
   @include icon;
   &--status {
     @include icon {
-      background-color: $verde;
-      color: black;
+      background-color: $secondBg;
+      color: $mainBg;
+      padding-left: rem(12);
     }
   }
 }
-
 
 .detailWrapper {
   margin: auto;
@@ -101,11 +120,18 @@
 }
 .detailLink {
   width: auto;
-  font-size: 20px;
+  font-size: rem(16);
   font-family: $secondaryText;
-  color: $azul;
+  color: $secondBg;
   text-decoration: underline;
-  margin-bottom: 12px;
+  margin-bottom: rem(12);
+  &--arrow {
+    margin-right: rem(3);
+    color: $iconColor;
+  }
+  @include tablet {
+    font-size: rem(20);
+  }
 }
 
 .detailCard {
@@ -113,54 +139,50 @@
   flex-direction: row;
   justify-content: center;
   width: auto;
-  border: 10px $rosa outset;
-  border-radius: 20px;
-  background-color: $rosa;
+  border-radius: 50%;
+  background-image: './portal.jpg';
+
   &__sec {
     display: flex;
     flex-direction: column;
     justify-content: center;
-   
   }
-
   &__img {
     width: 40vw;
-    padding: 10px;
+    padding: rem(10);
     border-radius: 50%;
     @include tablet {
       width: auto;
-      padding: 30px;
+      padding: rem(30);
     }
     @include desktop {
       width: auto;
-      padding: 60px;
+      padding: rem(60);
     }
   }
-
   &__name {
     font-family: $fontText;
-    font-size: 16px;
+    color: $fontColorSecondary;
+    font-size: rem(16);
     @include tablet {
-      font-size: 18px;
+      font-size: rem(18);
     }
     @include tablet {
-      font-size: 20px;
+      font-size: rem(20);
     }
   }
-
   &__list {
     font-family: $fontText;
-    padding-right: 10px;
-    font-size: 12px;
+    color: $secondaryColor;
+    padding-right: rem(20);
+    font-size: rem(12);
     text-decoration: none;
     list-style: none;
     @include tablet {
-      font-size: 14px;
+      font-size: rem(14);
     }
     @include tablet {
-      font-size: 16px;
+      font-size: rem(16);
     }
   }
-
 }
-

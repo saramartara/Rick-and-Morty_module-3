@@ -7,8 +7,8 @@ const CharacterDetail = (props) => {
   return (
     <div className="detail">
       <div className="detailWrapper">
-        <Link className="detailLink" to="/">
-          Volver
+        <Link className="detailLink" to="/"><i className="detailLink--arrow fa fa-arrow-left"></i>
+             Volver
         </Link>
         <article className="detailCard">
           <img className="detailCard__img" title={name} alt={name} src={image} />
