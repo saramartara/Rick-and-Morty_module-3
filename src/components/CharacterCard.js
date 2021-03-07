@@ -6,8 +6,6 @@ import PropTypes from 'prop-types';
 const CharacterCard = (props) => {
   const { name, species, image, status } = props.character;
 
-  // Status and species ICONS: conditional rendering
-
   const deadStatus = () =>
     status === 'Dead' ? (
       <i

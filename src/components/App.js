@@ -7,7 +7,7 @@ import Filters from './Filters';
 import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 
-const App = (props) => {
+const App = () => {
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
 

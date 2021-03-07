@@ -10,6 +10,7 @@ Algunos datos técnicos sobre la realización de este proyecto:
 
 - Maquetación con HTML.
 - CSS para los estilos, sistema de Grid para los personajes.
+- Título de la página e icono personalizados. 
 - Diseño responsive con mediaqueries, se adapta a diferentes tamaños de pantalla. 
 - Interfaz de usuario basada en componentes, con responsabilidades concretas, lo que hace el código sólido y estable.
 - Acceso a [servidor](https://rickandmortyapi.com/documentation/#get-all-characters) y gestión de los datos recibidos. Uso del estado. 

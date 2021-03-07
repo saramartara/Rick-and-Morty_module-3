@@ -1,5 +1,5 @@
 import React from 'react';
-import '../stylesheets/layout/_detail.scss'
+import '../stylesheets/layout/_detail.scss';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
@@ -8,11 +8,17 @@ const CharacterDetail = (props) => {
   return (
     <div className="detail">
       <div className="detailWrapper">
-        <Link className="detailLink" to="/"><i className="detailLink--arrow fa fa-arrow-left"></i>
-             Volver
+        <Link className="detailLink" to="/">
+          <i className="detailLink--arrow fa fa-arrow-left"></i>
+          Volver
         </Link>
         <article className="detailCard">
-          <img className="detailCard__img" title={name} alt={name} src={image} />
+          <img
+            className="detailCard__img"
+            title={name}
+            alt={name}
+            src={image}
+          />
           <section className="detailCard__sec">
             <h4 className="detailCard__name">{name}</h4>
             <ul className="detailCard__list">
