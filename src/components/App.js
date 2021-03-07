@@ -3,8 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 import '../stylesheets/App.scss';
 import GetDataFromApi from '../services/GetDataFromApi';
 import Header from './Header';
-import CharacterList from './CharacterList';
 import Filters from './Filters';
+import CharacterList from './CharacterList';
 import CharacterDetail from './CharacterDetail';
 
 const App = (props) => {
