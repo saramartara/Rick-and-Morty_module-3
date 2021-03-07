@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import GetDataFromApi from '../services/GetDataFromApi';
 import '../stylesheets/App.scss';
+import GetDataFromApi from '../services/GetDataFromApi';
+import Header from './Header';
 import CharacterList from './CharacterList';
 import Filters from './Filters';
 import CharacterDetail from './CharacterDetail';
@@ -38,15 +39,9 @@ const App = (props) => {
     );
   };
 
-  const logo = './Rick_and_Morty.png';
-  const alt = 'logo';
-
   return (
     <div className="App">
-      <h1 className="logoContainer">
-        <img className="logo" src={logo} alt={alt} title={alt} />
-      </h1>
-
+      <Header />
       <Switch>
         <Route path="/" exact>
           <Filters handleFilter={handleFilter} userSearch={name} />

@@ -1,0 +1,30 @@
+@import '../core/reset';
+@import '../core/functions';
+@import '../core/variables';
+@import '../core/mixins';
+
+
+.form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .input {
+    border: $secondaryColor rem(2) solid;
+    border-radius: rem(8);
+    background-color: $mainBg;
+    width: 50vw;
+    height: rem(25);
+    font-size: rem(12);
+    color: $secondBg;
+    margin: rem(40);
+    @include tablet {
+      width: 40vw;
+      height: rem(35);
+      font-size: rem(20);
+    }
+    @include desktop {
+      width: 30vw;
+    }
+  }

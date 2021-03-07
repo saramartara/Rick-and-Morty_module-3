@@ -1,0 +1,20 @@
+@import '../core/reset';
+@import '../core/functions';
+@import '../core/variables';
+@import '../core/mixins';
+
+.logoContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.logo {
+  margin: auto;
+  width: 50vw;
+  @include tablet {
+    width: 40vw;
+  }
+  @include desktop {
+    width: 30vw;
+  }
+}

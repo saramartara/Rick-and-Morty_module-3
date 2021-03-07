@@ -1,4 +1,5 @@
 import React from 'react';
+import '../stylesheets/layout/_list.scss';
 import CharacterCard from './CharacterCard';
 
 const CharacterList = (props) => {
