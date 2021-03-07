@@ -26,14 +26,14 @@ https://raw.githubusercontent.com/Adalab/rick-y-morty/master/data/rick-y-morty.j
 // }
 // return 0;}))
 //
-//igual en ternario
+//igual en ternario:
 //
 // console.table(characters.sort( (a, b) => a.name > b.name ? 1 : - 1))
 // ;
 
+// sort + filter
 
-
-  /* onst sortAndFilterCharacters = characters.sort( (a, b) => a.name > b.name ? 1 : - 1)
+  /* const sortAndFilterCharacters = characters.sort( (a, b) => a.name > b.name ? 1 : - 1)
   .filter((character) => {
     return character.name.toLowerCase().includes(name.toLowerCase());
   }); */
