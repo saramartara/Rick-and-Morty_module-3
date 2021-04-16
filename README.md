@@ -1,4 +1,4 @@
-# Wubba Lubba Dub Dub!!
+# [Wubba Lubba Dub Dub!!][beta]
 
 Este repositorio es una web para buscar y consultar personajes de _Rick y Morty_. Es un ejercicio realizado con [React](https://es.reactjs.org/), que forma parte del curso de formación de la [Asociación Adalab.](https://adalab.es/)
 
@@ -28,7 +28,7 @@ Algunos datos técnicos sobre la realización de este proyecto:
 
 ## Cómo funciona
 
-Puedes acceder directamente en [este enlace](http://beta.adalab.es/modulo-3-evaluacion-final-saramartara/#/)
+Puedes acceder directamente en [este enlace][beta]
 Escribe en el campo de búsqueda para encontrar un personaje. Es sencillo, se ordenan alfabéticamente por en nombre.
 Pulsa sobre cualquiera para ver información detallada: origen, estatus, especie, episodios...
 
@@ -38,3 +38,5 @@ Pulsa sobre cualquiera para ver información detallada: origen, estatus, especie
 Puedes hacerlo a través de las _issues_ de este repositorio o o contactándome por [email](mailto:saramartinezaragon@gmail.com) o [linkedin](https://www.linkedin.com/in/saramartara/).
 
 ---
+
+[beta]: https://saramartara.github.io/Rick-and-Morty_module-3/
