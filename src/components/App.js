@@ -10,7 +10,7 @@ import CharacterDetail from './CharacterDetail';
 const App = (props) => {
   const [characters, setCharacters] = useState([]);
   const [name, setName] = useState('');
-  const [species, setSpecies] = useState('all')
+  const [species, setSpecies] = useState('all');
 
   useEffect(() => {
     GetDataFromApi().then((data) => setCharacters(data));
@@ -18,33 +18,28 @@ const App = (props) => {
 
   const handleFilter = (inputValue) => {
     if (inputValue.key === 'name') {
-      setName(inputValue)
+      setName(inputValue.value);
     }
     // setName(inputValue);
     else if (inputValue.key === 'species') {
-      setSpecies(inputValue);
+      setSpecies(inputValue.value);
     }
   };
 
   const sortAndFilterCharacters = characters
     .sort((a, b) => (a.name > b.name ? 1 : -1))
     .filter((character) => {
-      return character.name.toLowerCase().includes(name.toLowerCase())
-    }).filter((character) => {
-      console.log(character.species)
-      if (species === "all") {
-        return true;
-      } else if (species === "human") {
-        return character.species.human
-      } else {
-        return character.species.alien
-      }
-       
+      return character.name.toLowerCase().includes(name.toLowerCase());
     })
-
-    console.log(sortAndFilterCharacters)
-
-   
+    .filter((character) => {
+      if (species === 'all') {
+        return true;
+      } else if (species === 'human') {
+        return character.species.human;
+      } else {
+        return character.species.alien;
+      }
+    });
 
   const renderDetail = (props) => {
     const id = parseInt(props.match.params.id);
